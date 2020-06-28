@@ -1,0 +1,19 @@
+<html>
+<head>
+<script src="/socket.io/socket.io.js"></script>	
+
+	</head>
+<body>
+<h1>hello wolrd</h1>
+<script>
+var socket=io();
+socket.on('message',function(data){
+document.write(data)
+
+})
+</script>
+</body>
+
+
+
+</html>
