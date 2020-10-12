@@ -9,7 +9,10 @@ show=document.getElementById('show');
 part=document.getElementById('participents');
 list=document.getElementById('list');
 sethandle=document.getElementById('sethandle');
+file=document.getElementById('fileName');
+image=document.getElementById('image');
 var div=document.getElementById('chat-window');
+
 let count=0;
 let handles=""
 
@@ -43,6 +46,27 @@ socket.emit('chat',{
 message.value=""
 })
 
+
+file.addEventListener('change',(element)=>{
+console.log(element)
+
+var file=element.target.files[0];
+var reader=new FileReader();
+reader.onloadend=function(){
+console.log("RESULT",reader.result);
+socket.emit('image',{
+
+	result:reader.result,
+	handle:handle.value
+
+
+}
+
+	);
+}
+reader.readAsDataURL(file);
+})
+
 message.addEventListener('keypress',()=>{
 
 	socket.emit('typing',handle.value)
@@ -71,4 +95,12 @@ return "<li>"+ data+"</li>"
 
 	show.innerHTML="<p> "+ data.clients+" joined </p>"
 	list.innerHTML=online
+})
+socket.on('image',(data)=>{
+if(data.result.includes('/pdf'))
+output.innerHTML+="<p><strong>"+data.handle+":</strong>"+"<iframe class=\"pdf\" src=\""+data.result+"\"/>"
+else
+output.innerHTML+="<p><strong>"+data.handle+":</strong>"+"<img class=\"image\" src=\""+data.result+"\"/>"
+
+
 })

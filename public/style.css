@@ -30,7 +30,18 @@ h2{
     color: #555;
 
 }
+.pdf{
+width:450px;
+height:250px;
 
+
+}
+.image{
+
+width:250px;
+height:250px;
+
+}
 #feedback p{
     color: #aaa;
     padding: 14px 0px;

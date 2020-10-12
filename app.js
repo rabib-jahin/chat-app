@@ -35,6 +35,10 @@ console.log(data.handle)}
 
 
 })
+socket.on('image',(data)=>{
+io.sockets.emit('image',data)
+
+})
 socket.on('get',()=>{
 
 	io.sockets.emit('get',{
