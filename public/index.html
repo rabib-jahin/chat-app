@@ -4,26 +4,37 @@
 <link href="/style.css" rel="stylesheet"/>
 	</head>
 <body>
+
+
+<h1 id="title"></h1>
+
+	<button id="leave" >Leave</button>
+	<div id="room">
+<input type="text" id="roomName" placeholder="Enter a room name to create or join"/>
+		<button id="save">Create Room</button>
+	</div><br/>
+	<div id="show">
+		<button id="joinRoom" >Join Room</button>
+	</div>
+	<div id="rooms">
+<ul id="uList">
+
+</ul>
+	</div>
 <div id="mario-chat">
 
 <div id="chat-window">
-	<div id="output">
 
-	</div>
 	<div id="feedback"></div>
 </div>
+<div id="handlediv">
 <input id="handle" type="text" placeholder="Handle"/>
 <button id="sethandle">Set Handle</button>
+</div>
 <input id="message" type="text" placeholder="Message"/>
 <input type="file" id="fileName" name="file" accept=".jpg,.jpeg,.png,.svg,.pdf,.bmp"/>
 <button id="send">Send</button><br/><br/>
-<button id="participents">Show Participents</button>
-<div id="show">
 
-</div>
-<ul id="list">
-
-</ul>
 </div>
 <script src="/chat.js"></script>
 </body>
